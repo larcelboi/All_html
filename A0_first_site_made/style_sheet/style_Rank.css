@@ -19,7 +19,7 @@ body{
     text-shadow: 0 0 100px white, 0 0 100px purple, 0 0 100px purple;
     font-size: 40px;
 }
-.text:hover + .table_text_gone { /*--this target the sibling or .text:hover .image_gone (that will target the child)*/
+.text:hover + .table_text_gone {
     opacity: 1;
 }
 
