@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Résultats du formulaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+    <h1>Valeurs reçues</h1>
+    <p class="hint">Les valeurs ci-dessous proviennent de la chaîne de requête (méthode <strong>GET</strong>).</p>
+
+    <div id="results" class="card"></div>
+
+    <details class="raw">
+        <summary>Brut (GET)</summary>
+        <pre id="raw"></pre>
+    </details>
+
+    <p><a href="index.html" class="back">← Retour au formulaire</a></p>
+    <p><a href="correction.html" class="back">Vers les explications →</a></p>
+
+</main>
+
+<script>
+    (function () {
+        const params = new URLSearchParams(window.location.search);
+        const results = document.getElementById('results');
+        const raw = document.getElementById('raw');
+
+        if ([...params.keys()].length === 0) {
+            results.innerHTML = "<p>Aucune donnée reçue. Soumettez le formulaire d’abord.</p>";
+            return;
+        }
+
+        const dl = document.createElement('dl');
+        params.forEach((value, key) => {
+            const dt = document.createElement('dt');
+            dt.textContent = key;
+
+            const dd = document.createElement('dd');
+            // Masquer le mot de passe dans l’affichage principal
+            dd.textContent = key.toLowerCase().includes('password') ? '••••••••' : value || '—';
+
+            dl.appendChild(dt);
+            dl.appendChild(dd);
+        });
+
+        results.appendChild(dl);
+
+        // Affichage « brut » pour la pédagogie
+        const obj = {};
+        params.forEach((v, k) => obj[k] = v);
+        raw.textContent = JSON.stringify(obj, null, 2);
+    })();
+</script>
+</body>
+</html>

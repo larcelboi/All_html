@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Correction – Regex du formulaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Petites touches visuelles spécifiques à la correction */
+        .regex { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+        .ok    { color: var(--ok); font-weight: 700; }
+        .bad   { color: var(--danger); font-weight: 700; }
+        .grid  { display: grid; gap: 16px; }
+        .col2  { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+        .try   { display:flex; gap:8px; align-items:center; margin-top:8px; }
+        .try input { flex:1; }
+        table { width:100%; border-collapse: collapse; }
+        td, th { padding:8px 10px; border-bottom:1px solid var(--border); text-align:left; }
+        th { color: var(--muted); font-weight:600; }
+        .pill { border:1px solid var(--border); border-radius:999px; padding:2px 10px; display:inline-block; font-size:.85rem; color:var(--muted); }
+        .expr { margin:6px 0 12px; }
+    </style>
+</head>
+<body>
+<main class="container">
+    <h1>Correction – Validation par expressions régulières</h1>
+    <p class="hint">
+        Cette page explique chaque regex utilisée dans <a href="index.html" class="back">le formulaire</a>,
+        propose des exemples ✅/❌ et un testeur rapide.
+    </p>
+
+    <div id="sections" class="grid"></div>
+
+    <p style="margin-top:24px">
+        <a href="index.html" class="back">⬅ Retour au formulaire</a>
+    </p>
+</main>
+
+<script src="correction-data.js"></script>
+<script>
+    // -- Rendu des sections à partir des définitions dans correction-data.js --
+    const container = document.getElementById('sections');
+
+    function explain(parts) {
+        if (!parts) return "";
+        return `
+        <div class="col2">
+          ${parts.map(p => `
+            <div class="card">
+              <div class="pill">${p.label}</div>
+              <div class="expr"><code class="regex">${p.expr}</code></div>
+              <div class="hint">${p.explain}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function tableRows(examples, rx) {
+        return examples.map(v => {
+            const pass = rx.test(v);
+            return `<tr><td><code>${v || '—'}</code></td><td>${pass ? '<span class="ok">match</span>' : '<span class="bad">no match</span>'}</td></tr>`;
+        }).join('');
+    }
+
+    function renderSection(s) {
+        const card = document.createElement('section');
+        card.className = 'card';
+
+        // Construire la regex JS (sans les ancres/options HTML implicites)
+        let rx;
+        try { rx = new RegExp(s.regex.source, s.regex.flags || ''); }
+        catch(e){ rx = null; }
+
+        card.innerHTML = `
+        <h2 style="margin-top:0">${s.title}</h2>
+        <div class="hint">${s.goal}</div>
+
+        <h3>Regex utilisée</h3>
+        <p><code class="regex">${s.regex.display}</code></p>
+
+        ${s.notes ? `<details><summary>Notes</summary><div class="hint" style="margin-top:8px">${s.notes}</div></details>` : ''}
+
+        ${s.parts ? `<h3>Décomposition</h3>${explain(s.parts)}` : ''}
+
+        <h3>Exemples</h3>
+        <table>
+          <thead><tr><th>Valeur</th><th>Résultat</th></tr></thead>
+          <tbody>${rx ? tableRows(s.examples, rx) : `<tr><td colspan="2" class="bad">Regex invalide</td></tr>`}</tbody>
+        </table>
+
+        <div class="try">
+          <input type="text" placeholder="Essayer une valeur…" aria-label="Tester la valeur">
+          <button type="button">Tester</button>
+          <span class="pill">résultat</span>
+        </div>
+      `;
+
+        const input = card.querySelector('input');
+        const btn   = card.querySelector('button');
+        const pill  = card.querySelector('.pill:last-of-type');
+
+        btn.addEventListener('click', () => {
+            const v = input.value;
+            if (!rx) return;
+            const pass = rx.test(v);
+            pill.textContent = pass ? 'match' : 'no match';
+            pill.className = 'pill ' + (pass ? 'ok' : 'bad');
+        });
+
+        container.appendChild(card);
+    }
+
+    DATA.forEach(renderSection);
+</script>
+</body>
+</html>

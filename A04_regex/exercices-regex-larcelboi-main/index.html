@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice – Formulaire + Regex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+    <h1>Exercice – Formulaire (validation par expressions régulières)</h1>
+    <p class="hint">Vous devez modifier le code de la page <code>index.html</code> pour que les champs
+        soient du <em>bon type</em> et <em>validés</em> selon les critères demandés.</p>
+    <p class="hint">Vous devez utiliser un mélange de validation HTML5 et d'expressions régulières.</p>
+
+    <!-- IMPORTANT : method=GET pour voir les valeurs dans resultats.html -->
+    <form action="resultats.html" method="get">
+        <!-- Nom d'utilisateur : commence par lettre, 3–16 caractères [lettres/chiffres/_] -->
+        <div class="field">
+            <label for="username">Nom d’utilisateur</label>
+            <input id="username" name="username" type="text"
+                   placeholder="ex.: remy_c" required>
+            <small class="help">Doit commencer par une lettre, 3 à 16 caractères (lettres, chiffres, soulignés).</small>
+        </div>
+
+        <!-- Mot de passe : 8+ avec minuscule/majuscule/chiffre/symbole -->
+        <div class="field">
+            <label for="password">Mot de passe</label>
+            <input id="password" name="password" type="text" required>
+            <small class="help">8+ caractères dont minuscule, majuscule, chiffre et symbole.</small>
+        </div>
+
+        <!-- Courriel : type=email (HTML5) -->
+        <div class="field">
+            <label for="email">Courriel</label>
+            <input id="email" name="email" type="text" placeholder="ex.: vous@domaine.com" required>
+            <small class="help">nom@domaine</small>
+        </div>
+
+        <!-- Téléphone CA/US flexible : 123-456-7890, (123) 456 7890, etc. -->
+        <div class="field">
+            <label for="tel">Téléphone</label>
+            <input id="tel" name="tel" type="tel"
+                   placeholder="ex.: (819) 555-1234" required>
+            <small class="help">Format accepté : 123-456-7890, (123)456-7890, 123 456 7890</small>
+        </div>
+
+        <!-- Code postal canadien -->
+        <div class="field">
+            <label for="postal">Code postal (Canada)</label>
+            <input id="postal" name="postal" type="text"
+                   placeholder="ex.: J8X 2Y7" required>
+            <small class="help">Format canadien : A1A 1A1 (espace ou sans).</small>
+        </div>
+
+        <!-- URL -->
+        <div class="field">
+            <label for="site">Site web</label>
+            <input id="site" name="site" type="text" placeholder="https://exemple.com" required>
+            <small class="help">Débute par le protocole, suivit de l'adresse.</small>
+        </div>
+
+        <!-- IPv4 stricte 0–255 -->
+        <div class="field">
+            <label for="ipv4">Adresse IPv4</label>
+            <input id="ipv4" name="ipv4" type="text"
+                   placeholder="ex.: 192.168.0.10" required>
+            <small class="help">Quatre octets 0–255 séparés par des points.</small>
+        </div>
+
+        <!-- Date de naissance -->
+        <div class="field">
+            <label for="dob">Date de naissance</label>
+            <input id="dob" name="dob" type="date" required>
+            <small class="help">Rien à faire, un champ de type date se valide lui-même.</small>
+        </div>
+
+        <!-- Nombre 1–100 -->
+        <div class="field">
+            <label for="age">Âge (1–100)</label>
+            <input id="age" name="age" type="text" required>
+            <small class="help">Valeur numérique entre 1 et 100.</small>
+        </div>
+
+        <div class="actions">
+            <button type="submit">Envoyer</button>
+            <button type="reset">Réinitialiser</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>
