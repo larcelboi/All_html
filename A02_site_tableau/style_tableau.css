@@ -1,0 +1,57 @@
+nav{
+    background-color: black;
+    height: 200px;
+    width: 100%;
+}
+nav a{
+    margin: 30px 0 10px 50px;
+    display: inline-block;
+    padding: 40px 50px;
+    border: 10px solid white;
+    font-size: 50px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+.class-table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 100px;
+    width: 80%;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: cornflowerblue;
+    color: white;
+}
+caption{
+    font-size: 100pt;
+}
+th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    transition: font-size 0.5s;
+
+}
+th:hover{
+    font-size: 50pt;
+}
+table tr td ul{
+    list-style: none;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+tr{
+    transition: font-size 0.5s;
+}
+tr:hover img{
+    opacity: 1;
+
+}
