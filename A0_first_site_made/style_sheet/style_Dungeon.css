@@ -1,0 +1,44 @@
+.text{
+    font-family: "Felix Titling", cursive;
+    text-align: center;
+    color: white;
+    font-size: 40pt;
+    text-shadow: 0 0 100px purple, 0 0 100px purple;
+}
+body{
+    background-image: url("../backgroun_image/Statue_of_God_Smile_Anime_Episode_1.webp");
+    background-repeat: no-repeat; /* prevents image from repeating */
+    background-size: 100% 100%; /* Cover th entire page */
+    background-position: center ;
+    background-attachment: fixed;
+
+}
+button{
+    text-shadow: 0 0 100px purple;
+    font-family: "Felix Titling", cursive;
+    text-align: center;
+    color: white;
+    font-size: 20pt;
+    transition: font-size 0.5s ease,text-shadow 0.5s ease;
+
+    border-color: transparent;
+    background-color: transparent;
+    position: fixed;
+}
+button:hover{
+    font-size: 25pt;
+}
+button:hover + .invisible_text_hover{
+    opacity: 1;
+
+}
+.invisible_text_hover {
+    opacity: 0; /* hide the element */
+    position: absolute;
+
+    font-size: 20pt;
+    text-shadow: 0 0 100px purple, 0 0 100px purple;
+    color: purple;
+    transition: opacity 0.5s ease;
+}
+

@@ -1,0 +1,44 @@
+body{
+    background-image: url("../backgroun_image/3-2-1.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center ;
+
+}
+
+.text{
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    line-height: 100px;
+    transition: font-size 0.5s;
+}
+.text:hover{
+    color: purple;
+    text-shadow: 0 0 100px white, 0 0 100px purple, 0 0 100px purple;
+    font-size: 40px;
+}
+.text:hover + .table_text_gone { /*--this target the sibling or .text:hover .image_gone (that will target the child)*/
+    opacity: 1;
+}
+
+.table_text_gone {
+    color: white;
+    font-size: 20px;
+    font-family: fantasy;
+    transition: opacity 0.5s ease;
+    opacity:0 ;
+
+}
+table{
+    border: 4px solid darkviolet;
+
+    /*border-collapse: collapse; /* optional, makes borders cleaner */
+
+}
+
+img,th{
+    border: 2px solid rebeccapurple;
+
+}
