@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    height: 40px;
+    width: 60px;
+    float: left;
+}
+
+nav {
+    background-color: #f4ad8f;
+    padding: 0;
+    margin: 0;
+}
+
+/* Liste horizontale */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Liens du menu */
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Effet au survol */
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1.title {
+    color: blue;
+}
+
+#le-titre.title {
+    color: red;
+    text-decoration: blueviolet underline;
+}
+
+table {
+    border-collapse: collapse;
+    border-style: solid;
+}
+table * {
+    border-style: solid;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: blueviolet;
+}
+
+
+
+
+
