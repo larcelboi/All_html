@@ -1,4 +1,4 @@
-body{
+/*body{
     background-color: white;
 
 }
@@ -39,4 +39,41 @@ nav{
 }
 .dropdown-content a:hover{
     background-color: lightblue;
+}
+
+ */
+nav{
+    background-color: lightblue;
+}
+.nav-menu, .nav-menu .dropdown-content {
+    list-style-type: none;
+    font-weight: bold;
+    height: 40px;
+    padding: 5px 5px;
+}
+.nav-menu a{
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px 20px;
+    top: 5px;
+    color: white;
+
+}
+.nav-button {
+    position: relative;
+}
+
+.dropdown-content  {
+    position: absolute;
+    display: none;
+}
+.dropdown-content  {
+    background-color: grey;
+}
+.dropdown:hover .nav-button + .dropdown-content {
+    display: block;
+}
+.dropdown-content li:hover {
+    background-color: dimgrey;
+    color: lemonchiffon;
 }
