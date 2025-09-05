@@ -1,0 +1,42 @@
+body{
+    background-color: white;
+
+}
+nav{
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+}
+.dropdown{
+    display: inline-block;
+    position: relative;
+    margin: 8px 10px;
+    left: 10px;
+    padding: 5px 5px;
+}
+.dropdown .nav-button, .dropdown-content a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 5px;
+
+}
+.dropdown-content a {
+    display: block;
+}
+
+.dropdown-content{
+    position: absolute;
+    display: none;
+    top: 100%;
+
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+    background-color: grey;
+
+}
+.dropdown-content a:hover{
+    background-color: lightblue;
+}
