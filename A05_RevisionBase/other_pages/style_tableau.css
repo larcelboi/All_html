@@ -1,0 +1,8 @@
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #000; /* add visible borders to each cell */
+    padding: 8px;
+}

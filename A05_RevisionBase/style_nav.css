@@ -1,0 +1,37 @@
+nav a,nav ul{
+    font-size: 15pt;
+    font-weight: bold;
+    font-family: Forte;
+    text-decoration: none;
+    color: white;
+    list-style: none;
+}
+.FakeButton{
+    transition: font-size 0.5s ease;
+}
+.Menu{
+    margin: 5px 20px;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+.Menu:hover .FakeButton{
+    font-size: 17pt;
+}
+.dropdown-content{
+    position: absolute;
+    display: none;
+    background-color: grey;
+    padding: 0;
+    top: 100%;
+    left: 5%;
+}
+.dropdown-content li:hover{
+    background-color: darkgrey;
+    border: 3px solid white;
+}
+.Menu:hover .dropdown-content{
+    display: block;
+}
