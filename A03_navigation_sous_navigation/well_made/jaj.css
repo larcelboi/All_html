@@ -59,6 +59,9 @@ nav{
     color: white;
 
 }
+.dropdown {
+    display: inline-block;
+}
 .nav-button {
     position: relative;
 }
