@@ -8,38 +8,50 @@ nav{
     border-radius: 10px;
 
 }
-.Menu{
-    position: relative;
-    display: inline-block;
-    border: 1px red solid;
+.Fake{
+    transition: font-size 0.5s ease;
 
 }
-.Fake,.Dropdown-menu a  {
-    list-style: none;
-    font-size: 15pt;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    text-decoration: none;
+.Menu:hover .Fake{
+    font-size: 18pt;
+    border: 3px solid white;
+    border-radius: 15px;
 
+}
+.Menu{
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    left: 20px;
+    top: 10px;
+}
+.Dropdown-menu li, .Menu li{
+    list-style-type: none;
+}
+.Menu li a{
+    color: white;
+    font-weight: bold;
+    font-size: 15pt;
+    text-decoration: none;
+    padding: 10px;
+}
+.Dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+.Dropdown-menu a{
+    display: block;
+    background-color: lightgrey;
+}
+.Dropdown-menu a:hover{
+    background-color: dimgrey;
+    border: 3px solid white;
+    border-radius: 15px;
 
 }
 .Menu:hover .Dropdown-menu{
     display: block;
-}
-.Dropdown-menu a  {
-    background-color: darkgrey;
-    display: block;
 
-}
-.Dropdown-menu {
-    position: absolute;
-    list-style: none;
-    top: 100%;
-    display: none;
-}
-.Dropdown-menu a:hover{
-    background-color: dimgrey;
-    border: 2px solid white;
 }
