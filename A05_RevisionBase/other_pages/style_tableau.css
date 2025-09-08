@@ -26,3 +26,30 @@
     background-color: lightblue;
     color: white;
 }
+
+.table2  {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table2 caption{
+    font-weight: bold;
+
+}
+.table2 thead th{
+    background-color: lightgrey;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+    border: 1px solid black;
+}
+.table2 tbody tr{
+    border-bottom: 1px solid black;
+}
+.table2 th, .table2 td {
+    text-align: center;
+}
+.table2 tbody tr  td {
+    border-right: 1px solid black;
+
+}

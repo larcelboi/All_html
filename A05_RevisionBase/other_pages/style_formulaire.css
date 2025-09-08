@@ -1,0 +1,49 @@
+form {
+    box-sizing: border-box;
+    height: 500px;
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+}
+form fieldset {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 10px;
+
+}
+
+.form-row label{
+    display: inline-block;
+    width: 20%;
+    margin-top: 10px;
+}
+
+.radio-group label{
+    display: block;
+    background-color: red;
+
+}
+
+
+
+
+
+
+
+
+.containerButton{
+    text-align: center;
+    margin: 8px ;
+
+}
+.containerButton button{
+    margin-right: 5px;
+    padding: 5px;
+
+
+}

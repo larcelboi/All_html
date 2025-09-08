@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire</title>
+    <link rel="stylesheet" href="style_formulaire.css">
+    <link rel="stylesheet" href="style_tableau.css">
+    <link rel="stylesheet" href="../style_nav.css">
+</head>
+
+  <body>
+    <form action="">
+      <h2>Formulaire de paiement</h2>
+
+      <fieldset class="field1">
+        <legend>Informations de contact</legend>
+        <div class="form-row">
+          <label for="Nom">Nom :</label>
+          <input type="text" name="Nom" id="Nom" placeholder="Votre Nom" required>
+        </div>
+
+        <div class="form-row">
+          <label for="Email">Email : </label>
+          <input type="email" name="Email" id="Email" placeholder="Votre Email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="LesProvinces" required>Province :</label>
+          <input list="LesProvinces" name="Province" id="ChoicesProvince">
+          <datalist id="LesProvinces" >
+            <option value="Albania"></option>
+            <option value="Canada"></option>
+            <option value="Cameroune"></option>
+            <option value="Colombie"></option>
+            <option value="Algeria"></option>
+          </datalist>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="field2">
+        <legend>Informations de paiement</legend>
+        <div>
+          <label for="TypePaiement">Type de paiement : </label>
+
+          <input type="radio" name="TypePaiement" id="TypePaiement1">Visa
+          <input type="radio" name="TypePaiement" id="TypePaiement2">Mastercard
+          <input type="radio" name="TypePaiement" id="TypePaiement"> Americain Express
+        </div>
+
+        <div class="form-row">
+          <label for="numero">Email : </label>
+          <input type="number" name="numero" id="numero" placeholder="Votre numero" required>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="field3">
+        <legend>Informations de livraison</legend>
+        <div class="radio-group">
+          <label>
+            <input type="checkbox" name="TypePaiement">asdsafasfsaf </label>
+          <label>
+            <input type="checkbox" name="TypePaiement">asdsafasfsaf</label>
+        </div>
+
+
+      </fieldset>
+      <div class="containerButton">
+        <button type="submit">Envoyer</button>
+        <button type="reset">Annuler</button>
+      </div>
+
+    </form>
+
+  </body>
+</html>
